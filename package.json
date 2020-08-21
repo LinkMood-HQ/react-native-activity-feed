@@ -1,0 +1,114 @@
+{
+  "_from": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz",
+  "_id": "react-native-activity-feed-core@0.8.21",
+  "_inBundle": false,
+  "_integrity": "sha512-6PDfxdIiQpLl0gh4pQAJQSr/pevqXOzJKPbyG6GAP/CQRll1Z/VW2AdfeNxG3DUm0AYUSrSyIIjnacdb2qka3w==",
+  "_location": "/react-native-activity-feed-core",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz",
+    "rawSpec": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz",
+    "saveSpec": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz",
+    "fetchSpec": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz",
+  "_shasum": "dd6e72a320a0e7c0c301c63dd875d09ea206ed81",
+  "_spec": "https://github.com/GetStream/react-native-activity-feed/archive/v0.8.21.tar.gz",
+  "_where": "/Users/jaiten/linkmood-app",
+  "author": "",
+  "bundleDependencies": false,
+  "dependencies": {
+    "es6-symbol": "^3.1.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-markdown": "^1.0.0",
+    "getstream": "^4.1.0",
+    "immutable": "^4.0.0-rc.9",
+    "mime-types": "^2.1.21",
+    "moment": "^2.22.2",
+    "numeral": "^2.0.6",
+    "path": "^0.12.7",
+    "react-native-keyboard-spacer": "^0.4.1",
+    "react-native-safe-area-view": "0.9.0",
+    "react-native-sticky-keyboard-accessory": "^0.1.3",
+    "stream-analytics": "^2.7.1",
+    "url-parse": "^1.4.3"
+  },
+  "deprecated": false,
+  "description": "> React Native components to create activity and notification feeds using Stream",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.5",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-react-native-web": "^0.8.9",
+    "babel-plugin-root-import": "^6.1.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native": "^4.0.0",
+    "dotenv": "^6.0.0",
+    "eslint": "^5.12.1",
+    "eslint-plugin-flowtype": "^2.29.1",
+    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-react": "^7.10.0",
+    "faker": "^4.1.0",
+    "file-loader": "^2.0.0",
+    "flow-bin": "^0.80.0",
+    "flow-copy-source": "^2.0.2",
+    "husky": "^1.3.1",
+    "prettier": "^1.13.7",
+    "react-art": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-native": "~0.55.2",
+    "react-native-scripts": "1.14.0",
+    "react-native-web": "^0.8.9",
+    "react-styleguidist": "^7.2.5",
+    "react-test-renderer": "16.3.1",
+    "webpack": "^4.17.1"
+  },
+  "files": [
+    "lib"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "dotgit/hooks/pre-commit-format.sh && dotgit/hooks/pre-commit-reject-binaries.py"
+    }
+  },
+  "keywords": [
+    "feed",
+    "newsfeed",
+    "activity stream",
+    "react native",
+    "notification feed"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./src/index.js",
+  "name": "react-native-activity-feed-core",
+  "peerDependencies": {
+    "react": "16.3.1",
+    "react-native": "~0.55.2",
+    "react-navigation": "^2.3.1"
+  },
+  "scripts": {
+    "build": "rm -rf lib && babel src --out-dir lib --compact=false && cp -R src/images lib/ && flow-copy-source src lib",
+    "docs": "styleguidist build",
+    "docs-server": "styleguidist server",
+    "eslint": "eslint '**/*.{js,md}' --max-warnings 0",
+    "flow": "flow",
+    "lint": "prettier --list-different '**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc && eslint '**/*.{js,md}' --max-warnings 0",
+    "lint-fix": "prettier --write '**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc && eslint --fix '**/*.{js,md}' --max-warnings 0",
+    "postpack": "bin/postpack.sh",
+    "prepack": "bin/prepack.sh",
+    "prettier": "prettier --list-different '**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc",
+    "prettier-fix": "prettier --write '**/*.{js,ts,md,json}' .eslintrc.json .prettierrc .babelrc",
+    "preversion": "yarn && yarn lint",
+    "release": "bin/release.sh",
+    "test": "jest"
+  },
+  "version": "0.8.21"
+}
