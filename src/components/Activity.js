@@ -208,7 +208,6 @@ export default class Activity extends React.Component<Props> {
       }
     }
     text = text.trim();
-    console.log(styles.text);
     return (
       <View>
         {Boolean(text) && (

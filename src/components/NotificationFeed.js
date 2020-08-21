@@ -69,7 +69,6 @@ export default class NotificationFeed extends React.Component<Props> {
   };
 
   render() {
-    console.log(this.props)
     return (
       <Feed
         feedGroup={this.props.feedGroup}
@@ -153,7 +152,6 @@ class NotificationFeedInner extends React.Component<PropsInner> {
       deletes: this.props.realtimeDeletes,
       onPress: this._refresh,
     };
-    console.log(this.props)
     return (
       <React.Fragment>
         {smartRender(this.props.Notifier, notifierProps)}

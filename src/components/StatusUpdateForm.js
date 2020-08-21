@@ -404,7 +404,12 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
           )}
 
           <View style={{ ...styles.newPostContainer, backgroundColor: '#FFF' }}>
-            <Avatar ImageComponent={FastImage} source={{ uri: (user.data?.profileImage || '') }} size={42} noShadow rounded notRound={false} onPress={this.props.onAvatarPress} />
+            <Avatar 
+              ImageComponent={FastImage} 
+              source={{ uri: user.data != null && user.data.profileImage != null ? user.data.profileImage : '' }} 
+              size={42} noShadow 
+              rounded 
+              onPress={this.props.onAvatarPress} />
             <View style={{ ...styles.textInput, backgroundColor: '#FFF' }}>
               <TextInput
                 ref={this.textInputRef}

@@ -54,33 +54,19 @@ export default class LikeButton extends React.Component<Props> {
       return onToggleChildReaction(reactionKind, reaction, {}, {});
     }
 
-    // feedClient.reactions.add("interested", activity.id,
-    //   { text: "Udaya sharma is interested in your plan" },
-    //   { targetFeeds: [`notification:${activity.actor.id}`] }
-    // );
+    const isPlan = activity.planInfo != null && activity.planInfo.channelId != null ? true : false
 
-    const isPlan = activity.planInfo?.channelId != null ? true : false
-    // feedClient.feed("notification", activity.actor.id).addActivity({
-    //   actor: feedClient.currentUser.id,
-    //   object: {
-    //     text: `${feedClient.currentUser.name} is interested in your ${isPlan ? 'plan' : 'broadcast'}`,
-    //     planId: activity.planInfo?.channelId || undefined
-    //   },
-    // })
-    if(activity.planInfo?.channelId != null) {
-      const channelId = activity.planInfo?.channelId;
+    if(isPlan) {
+      const channelId = activity.planInfo.channelId;
  
-      const isAlreadyInterested = (activity.own_reactions?.interested || []).length > 0;
+      const isAlreadyInterested = activity.own_reactions != null ? (activity.own_reactions.interested || []).length > 0 : false;
 
       chatClient.queryChannels({
         id: channelId 
       }).then(res => {if(res.length === 1) res[0].update({...buildChannelObject(res[0].data)}, { text: `${user} is${isAlreadyInterested ? " no longer" : ""} interested in your plan`})})
     }
 
-    console.log(activity)
-
-    console.log(activity.planInfo)
-    return onToggleReaction(reactionKind, activity, {planId: activity.planInfo?.channelId || undefined, text: `is interested in your ${isPlan ? 'plan' : 'broadcast' } "${isPlan ? activity.planInfo?.name : activity.object}"`, activityId: activity.id}, { targetFeeds: [`notification:${activity.actor.id}`]});
+    return onToggleReaction(reactionKind, activity, {planId: isPlan ? activity.planInfo.channelId : undefined, text: `is interested in your ${isPlan ? 'plan' : 'broadcast' } "${isPlan ? activity.planInfo.name : activity.object}"`, activityId: activity.id}, { targetFeeds: [`notification:${activity.actor.id}`]});
   };
 
   render() {
