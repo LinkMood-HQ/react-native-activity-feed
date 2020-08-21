@@ -380,6 +380,8 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
   render() {
     const styles = buildStylesheet('statusUpdateForm', this.props.styles);
     const { user } = this.props;
+
+    const SpecialView = Platform.OS === 'ios' ? InputAccessoryView : View;
     return (
       <View style={[this.props.fullscreen ? { flex: 1 } : { backgroundColor: '#f9f9f9' }]}>
         <View
@@ -442,7 +444,7 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
               </TouchableOpacity>
             </View>
 
-            <InputAccessoryView nativeID={'sendBroadcastId'}>
+            <SpecialView nativeID={'sendBroadcastId'}>
 
               <View style={{ flexDirection: "row", backgroundColor: '#F9F9F9', height: 40 }}>
                 <View
@@ -564,7 +566,7 @@ class StatusUpdateFormInner extends React.Component<PropsInner, State> {
                 </TouchableOpacity>
               </View> */}
 
-            </InputAccessoryView>
+            </SpecialView>
 
           </View>
         </View>
